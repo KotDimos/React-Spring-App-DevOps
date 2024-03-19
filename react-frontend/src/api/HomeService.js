@@ -3,7 +3,8 @@ import axios from "axios";
 
 const HomeService = () => {
   try {
-    return axios.get("http://localhost:81/api/v1");
+    const apiUrl = process.env.REACT_APP_API_BASE_URL;
+    return axios.get(`${apiUrl}/api/v1`);
   } catch (err) {
     let error = "";
     if (err.response) {

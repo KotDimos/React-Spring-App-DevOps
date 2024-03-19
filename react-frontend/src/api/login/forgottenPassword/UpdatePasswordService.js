@@ -4,7 +4,8 @@ const UpdatePasswordService = (id, password) => {
   console.log(id, password);
 
   try {
-    return axios.put(`http://localhost:81/api/v1/password`, null, {
+    const apiUrl = process.env.REACT_APP_API_BASE_URL;
+    return axios.put(`${apiUrl}/api/v1/password`, null, {
       params: {
         id,
         password,

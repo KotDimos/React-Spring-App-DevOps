@@ -2,7 +2,8 @@ import axios from "axios";
 
 const UserEmailDataService = async (email) => {
   try {
-    return axios.post(`http://localhost:81/api/v1/notification`, null, {
+    const apiUrl = process.env.REACT_APP_API_BASE_URL;
+    return axios.post(`${apiUrl}/api/v1/notification`, null, {
       params: {
         email,
       },
